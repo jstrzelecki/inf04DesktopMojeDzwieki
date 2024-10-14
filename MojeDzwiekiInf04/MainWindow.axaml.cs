@@ -25,18 +25,23 @@ public partial class MainWindow : Window
 
     private void ReadDataFromAvaloniaResource(string assetPath)
     {
-        var uri = new Uri(assetPath);
-        using Stream stream = AssetLoader.Open(uri);
-        using (StreamReader reader = new StreamReader(stream))
+        try
         {
+            var uri = new Uri(assetPath);
+            using var stream = AssetLoader.Open(uri);
+            using var reader = new StreamReader(stream);
             var lines = new List<string>();
             while (!reader.EndOfStream)
             {
                 lines.Add(reader.ReadLine());
             }
             MakeListOfAlbums(lines);
-            
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+      
     }
 
     private void ShowOneRecord(Album album)

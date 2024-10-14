@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MojeDzwiekiInf04")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97fd1850a09a858bf068dcc25d815334cbfa5919")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edf6755567a74b24bac30e78e144513c03c9b6dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("MojeDzwiekiInf04")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MojeDzwiekiInf04")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

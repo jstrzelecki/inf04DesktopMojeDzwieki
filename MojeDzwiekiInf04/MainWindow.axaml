@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="MojeDzwiekiInf04.MainWindow"
+        Title="MojeDzwiekiInf04"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        Width="1200"
+        Height="400"
+        Background="#2E8B57"
+        >
+        <Grid>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+       
+        
+                <Image Source="Assets/obraz3.png" 
+                       Width="70" Stretch="Uniform"/>
+        
+                <StackPanel Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="Assets/obraz.png" 
+                               Width="200" Stretch="Uniform"
+                               Margin="0,30,0,0"
+                               />
+                        
+                        
+                        
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Margin="0, 30,0,0">
+                        
+                    <Label x:Name="DownloadNumberLabel" Content="110000102" />
+                    <Button x:Name="DowloadButton" Content="Pobierz" 
+                            Margin="30,0,0,0"
+                            />
+                    </StackPanel>
+                </StackPanel>
+        
+                <Image Grid.Column="2" Source="Assets/obraz2.png"
+                       Width="70" Stretch="Uniform"/>
+        
+        
+        </Grid>
+        
+</Window>

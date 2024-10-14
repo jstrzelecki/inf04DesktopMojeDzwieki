@@ -24,5 +24,7 @@
       <AvaloniaResource Include="Assets\obraz2.png" />
       <None Remove="Assets\obraz3.png" />
       <AvaloniaResource Include="Assets\obraz3.png" />
+      <None Include="bin\Debug\net8.0\Data.txt" />
+ 
     </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Platform;
 
 namespace MojeDzwiekiInf04;
 
@@ -14,8 +15,28 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        ReadDataFromTxtFile("Data.txt");
-        ShowOneRecord(_albums[_albumIndex]);
+       // ReadDataFromTxtFile("Data.txt");
+        ReadDataFromAvaloniaResource("avares://MojeDzwiekiInf04/Assets/Data.txt");
+        if (_albums.Count > 0)
+        {
+            ShowOneRecord(_albums[_albumIndex]);
+        }
+    }
+
+    private void ReadDataFromAvaloniaResource(string assetPath)
+    {
+        var uri = new Uri(assetPath);
+        using Stream stream = AssetLoader.Open(uri);
+        using (StreamReader reader = new StreamReader(stream))
+        {
+            var lines = new List<string>();
+            while (!reader.EndOfStream)
+            {
+                lines.Add(reader.ReadLine());
+            }
+            MakeListOfAlbums(lines);
+            
+        }
     }
 
     private void ShowOneRecord(Album album)
@@ -34,27 +55,7 @@ public partial class MainWindow : Window
         if (File.Exists(filePath))
         {
             var lines = File.ReadAllLines(filePath);
-            for (int i = 0; i < lines.Length; i += 6)
-            {
-                try
-                {
-                    var album = new Album
-                    {
-                        Artist = lines[i],
-                        Title = lines[i + 1],
-                        TracksNumber = int.Parse(lines[i + 2]),
-                        Year = int.Parse(lines[i + 3]),
-                        Downloads =  int.Parse(lines[i + 4]),
-                    };
-                    _albums.Add(album);
-                   
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-
-            }
+            MakeListOfAlbums(lines.ToList()); 
            
            
         }
@@ -83,5 +84,29 @@ public partial class MainWindow : Window
         _albumIndex = (_albumIndex + 1) % _albums.Count; 
        
         ShowOneRecord(_albums[_albumIndex]); 
+    }
+
+    private void MakeListOfAlbums(List<string> dataFromFile)
+    {
+         for (int i = 0; i < dataFromFile.Count; i += 6)
+         {
+             try 
+             {
+                 var album = new Album
+                 {
+                     Artist = dataFromFile[i],
+                     Title = dataFromFile[i + 1],
+                     TracksNumber = int.Parse(dataFromFile[i + 2]),
+                     Year = int.Parse(dataFromFile[i + 3]),
+                     Downloads =  int.Parse(dataFromFile[i + 4]),
+                 };
+                 _albums.Add(album);
+                           
+             }
+             catch (Exception ex)
+             {
+                 Console.WriteLine(ex.Message); 
+             }
+         }
     }
 }

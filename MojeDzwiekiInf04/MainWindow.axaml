@@ -11,16 +11,25 @@
         Height="400"
         Background="#2E8B57"
         >
-        <Grid>
+    <Window.Styles>
+        <Style Selector="Label.white-text">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Label.green-text">
+            <Setter Property="Foreground" Value="#61D918" />
+        </Style>
+    </Window.Styles>
+    <Grid>
                 <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="6*" />
                         <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
        
-        
-                <Image Source="Assets/obraz3.png" 
-                       Width="70" Stretch="Uniform"/>
+                <Button Grid.Column="0" HorizontalAlignment="Left" Margin="10,0,0,0">
+                     <Image Source="Assets/obraz3.png" Width="70" Stretch="Uniform" />
+                </Button>
+               
         
                 <StackPanel Grid.Column="1">
                     <Grid>
@@ -33,21 +42,42 @@
                                Margin="0,30,0,0"
                                />
                         
-                        
+                        <StackPanel Grid.Column="1">
+                            <Label x:Name="ArtistLabel" Classes="white-text"
+                                   Content="My Test Wykonawca" FontSize="50" 
+                                   Margin="30,30,0,0"
+                                   />
+                            <Label x:Name="AlbumLabel" Classes="white-text"
+                                   Content="My Test Album" FontSize="30"
+                                   FontStyle="Italic"
+                                   Margin="30,30,0,0"/>
+                            <StackPanel Orientation="Horizontal">
+                                
+                            <Label x:Name="TracksNumberLabel" Classes="green-text"
+                                   Content="14 utworów" FontSize="20" 
+                                   Margin="30,30,0,0"/>
+                            <Label x:Name="ReleasedYearLabel" Classes="green-text"
+                                   Content="2006" FontSize="20" 
+                                   Margin="30,30,0,0"/>
+                            </StackPanel>
+                        </StackPanel>
                         
                     </Grid>
                     <StackPanel Orientation="Horizontal" Margin="0, 30,0,0">
                         
-                    <Label x:Name="DownloadNumberLabel" Content="110000102" />
-                    <Button x:Name="DowloadButton" Content="Pobierz" 
-                            Margin="30,0,0,0"
+                    <Label x:Name="DownloadNumberLabel" Classes="green-text"
+                           Content="110000102" />
+                    <Button x:Name="DowloadButton" Content="Pobierz"  
+                            Margin="30,0,0,0" 
+                            Background="#61D918" FontWeight="Bold"
+                            Foreground="Black"
                             />
                     </StackPanel>
                 </StackPanel>
         
-                <Image Grid.Column="2" Source="Assets/obraz2.png"
-                       Width="70" Stretch="Uniform"/>
-        
+                 <Button Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,10,0">
+                     <Image  Source="Assets/obraz2.png" Width="70" Stretch="Uniform"/>
+                 </Button>
         
         </Grid>
         

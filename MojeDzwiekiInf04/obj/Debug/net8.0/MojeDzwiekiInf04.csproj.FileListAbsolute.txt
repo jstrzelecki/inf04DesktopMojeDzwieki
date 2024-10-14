@@ -65,3 +65,4 @@
 /home/jarek/RiderProjects/MojeDzwiekiInf04/MojeDzwiekiInf04/obj/Debug/net8.0/MojeDzwiekiInf04.csproj.CopyComplete
 /home/jarek/RiderProjects/MojeDzwiekiInf04/MojeDzwiekiInf04/obj/Debug/net8.0/MojeDzwiekiInf04.genruntimeconfig.cache
 /home/jarek/RiderProjects/MojeDzwiekiInf04/MojeDzwiekiInf04/obj/Debug/net8.0/ref/MojeDzwiekiInf04.dll
+/home/jarek/RiderProjects/MojeDzwiekiInf04/MojeDzwiekiInf04/obj/Debug/net8.0/MojeDzwiekiInf04.sourcelink.json
